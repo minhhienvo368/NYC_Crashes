@@ -24,11 +24,34 @@ What he wants exactly is to predict which streets are the most dangerous while v
 - Apply the preprocessing steps needed so that a future machine learning model can make the best use out of it **(feature selection, feature engineering, feature normalization, and resampling)**
 
 Pimp up in this README file:
-   - Description
-   - Installation
-   - Usage
-   - (Visuals)
 
+# Description
+1. Adding new parameters to keep #crash_date_time as its dtype, 
+df_orig = pd.read_csv(filename, parse_dates=[['crash_date', 'crash_time']], skipinitialspace = True)
+
+2. Learnt how to split the feature crash_date_time into day, month and year
+df["day"] = df['crash_date_time'].map(lambda x: x.day)
+df["month"] = df['crash_date_time'].map(lambda x: x.month)
+df["year"] = df['crash_date_time'].map(lambda x: x.year)
+df["hour"] = df['crash_date_time'].map(lambda x: x.hour)
+df["minute"] = df['crash_date_time'].map(lambda x: x.minute)
+
+df[['crash_date_time', 'hour', 'minute','day', 'month', 'year']].head()
+
+3. Checked for unique of data (cols): There are no duplicates
+df.duplicated().any()
+4. Checked: how many rows of each attribute are NaN
+print(f'Sum of null values by columns: {df.isnull().sum()} \n')
+
+5. Drop the redundant columns that do not need for target and machine learning
+6. Checked again the redundant spaces in each cell of dateframe
+7. Rename unconventional column name
+8. Consolidate the text values (converted to lowercase)
+9. 
+
+
+
+----------
 Bill de Blasio wants to know and predict the dangerousness of the streets in New York.
 
 - Ask yourself what your target variable will be.
@@ -36,16 +59,10 @@ Bill de Blasio wants to know and predict the dangerousness of the streets in New
   - Deaths/injuries/both ?
   - How about passengers/driver/pedestrians/cyclists ?
 
-- Can values be consolidated? (e.g. `Truck` and `truck` refer to the same thing)
-- Are there some columns where most of the data is missing ?
-- Can you fill in some missing values ?
-- Is the date format correct?
-- Are some values integers that should be float or vice-versa ? Change the `dtype`.
-
 During the cleaning process, you might ask yourself some questions like:
 
-- _When should I drop my column when I have missing data ?_
-- _What do I do if I can't fill in every missing value ?_
+- _When should I drop my column when I have missing data? 1. columns contain than 5%, 30%, >50% missing values? No...it depends
+- _What do I do if I can't fill in every missing value ? 
 - _How long should my cleaning process take to run ?_
 
 And the response is: **it depends.**
