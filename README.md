@@ -47,7 +47,6 @@ print(f'Sum of null values by columns: {df.isnull().sum()} \n')
 6. Checked again the redundant spaces in each cell of dateframe
 7. Rename unconventional column name
 8. Consolidate the text values (converted to lowercase)
-9. 
 
 
 
@@ -82,11 +81,11 @@ You can have multiple final cleaned datasets, like:
 
 | Criteria       | Indicator                                                                      | Yes/No |
 | -------------- | ------------------------------------------------------------------------------ | ------ |
-| 1. Is complete | The student has realized all must-have features.                               |        |
-|                | There is a published GitHub page available.                                    |        |
-| 2. Is Correct  | There are no warnings or errors when running the script.                       |        |
-|                | The final `.csv` file can be opened and is in a clean state.                   |        |
-|                | The learner has used functions and minimized code duplication.                 |        |
-|                | The learner can explain why and how he replaced missing values.                |        |
-| 3. Is great    | Significantly more than 100000 rows have been used.                            |        |
+| 1. Is complete | The student has realized all must-have features.                               |   yes  |
+|                | There is a published GitHub page available.                                    |   yes  |
+| 2. Is Correct  | There are no warnings or errors when running the script.                       |   yes  |
+|                | The final `.csv` file can be opened and is in a clean state.                   |   yes  |
+|                | The learner has used functions and minimized code duplication.                 |   yes  |
+|                | The learner can explain why and how he replaced missing values.                |   yes  |
+| 3. Is great    | Significantly more than 100000 rows have been used.                            |   yes  |
 |                | Features were normalized and categorical variables have been encoded properly. |        |
